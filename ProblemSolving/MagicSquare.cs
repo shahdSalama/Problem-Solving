@@ -22,19 +22,19 @@ namespace HackerRank
             List<List<int>> one = new List<List<int>> { new List<int> { 8, 3, 4 }, new List<int> { 1, 5, 9 }, new List<int> { 6, 7, 2 } };
 
             List<List<int>> two
-                = SwitchColumns(one);
+                = SwitchRows(one);
 
-            List<List<int>> three = SwitchRows(one);
+            List<List<int>> three = SwitchColumns(one);
 
-            List<List<int>> four = SwitchRows(two);
+            List<List<int>> four = SwitchColumns(two);
 
             List<List<int>> five = MirrorOnLeftDiagonal(one);
 
-            List<List<int>> six = SwitchColumns(five);
+            List<List<int>> six = SwitchRows(five);
 
-            List<List<int>> seven = SwitchRows(five);
+            List<List<int>> seven = SwitchColumns(five);
 
-            List<List<int>> eight = SwitchRows(six);
+            List<List<int>> eight = SwitchColumns(six);
 
             Dictionary<int, List<List<int>>> predefined = new Dictionary<int, List<List<int>>>();
 
@@ -117,7 +117,7 @@ namespace HackerRank
             return result;
         }
 
-        private static List<List<int>> SwitchRows(List<List<int>> one)
+        private static List<List<int>> SwitchColumns(List<List<int>> one)
         {
             List<List<int>> result = new List<List<int>>();
 
@@ -137,7 +137,7 @@ namespace HackerRank
         }
 
 
-        private static List<List<int>> SwitchColumns(List<List<int>> one)
+        private static List<List<int>> SwitchRows(List<List<int>> one)
         {
             List<List<int>> result = new List<List<int>>();
 
