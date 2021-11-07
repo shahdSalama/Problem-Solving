@@ -96,51 +96,12 @@ class Solution
 
 
 
-    public static Stack<SinglyLinkedListNode> FillStack(Stack<SinglyLinkedListNode> s1,
-SinglyLinkedListNode node)
-    {
-        if (node.next == null)
-        {
-            s1.Push(node);
-            return s1;
-        }
-
-        else
-        {
-            s1.Push(node);
-
-            return FillStack(s1, node.next);
-        }
-    }
-
-
-
-
-
     public static void reversePrint(SinglyLinkedListNode llist)
     {
-        Stack<SinglyLinkedListNode> stack = new Stack<SinglyLinkedListNode>();
-
-        stack = FillStack(stack, llist);
-
-
-        SinglyLinkedList reversed = new SinglyLinkedList();
-
-
-        while (stack.Count() != 0)
-        {
-            reversed.InsertNode(stack.Pop().data);
-
-        }
-
-        llist = reversed.head;
-
-        while (llist != null)
-        {
-            Console.WriteLine(llist.data);
-            llist = llist.next;
-        }
-
+        if (llist == null)
+            return;
+        reversePrint(llist.next);
+        Console.WriteLine(llist.data);
 
     }
 
