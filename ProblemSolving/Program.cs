@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HackerRank.Recursion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using static Solution;
@@ -9,18 +10,26 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-      
-            Solution.SinglyLinkedList llist = new SinglyLinkedList();
 
-            int llistCount = Convert.ToInt32(Console.ReadLine());
+            var reversed = StringReverse.ReverseString("mmm");
+            
+            Console.WriteLine(reversed);
 
-            for (int i = 0; i < llistCount; i++)
-            {
-                int llistItem = Convert.ToInt32(Console.ReadLine());
-                llist.InsertNode(llistItem);
-            }
+            reversed = StringReverse.ReverseString("lol");
 
-            reversePrint(llist.head);
+            Console.WriteLine(reversed);
+
+            reversed = StringReverse.ReverseString("lool");
+
+            Console.WriteLine(reversed);
+
+            reversed = StringReverse.ReverseString("abs");
+
+            Console.WriteLine(reversed);
+
+            reversed = StringReverse.ReverseString("abms");
+
+            Console.WriteLine(reversed);
 
         }
     }
