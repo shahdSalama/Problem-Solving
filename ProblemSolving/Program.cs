@@ -1,4 +1,5 @@
-﻿using HackerRank.Recursion;
+﻿using HackerRank.DataStructure;
+using HackerRank.Recursion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,26 +12,35 @@ namespace HackerRank
         static void Main(string[] args)
         {
 
-            var reversed = StringReverse.ReverseString("mmm");
-            
-            Console.WriteLine(reversed);
+            SinglyLinkedList llist1 = new SinglyLinkedList();
 
-            reversed = StringReverse.ReverseString("lol");
+            int llist1Count = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine(reversed);
+            for (int i = 0; i < llist1Count; i++)
+            {
+                int llist1Item = Convert.ToInt32(Console.ReadLine());
+                llist1.InsertNode(llist1Item);
+            }
 
-            reversed = StringReverse.ReverseString("lool");
+            SinglyLinkedList llist2 = new SinglyLinkedList();
 
-            Console.WriteLine(reversed);
+            int llist2Count = Convert.ToInt32(Console.ReadLine());
 
-            reversed = StringReverse.ReverseString("abs");
+            for (int i = 0; i < llist2Count; i++)
+            {
+                int llist2Item = Convert.ToInt32(Console.ReadLine());
+                llist2.InsertNode(llist2Item);
+            }
 
-            Console.WriteLine(reversed);
+            SinglyLinkedListNode llist3 = MergeTwoSortedLinkedLists.mergeLists(llist1.head, llist2.head);
 
-            reversed = StringReverse.ReverseString("abms");
+            SinglyLinkedList.Print(llist3, " ");
+            Console.WriteLine();
 
-            Console.WriteLine(reversed);
 
         }
+
+
     }
 }
+
