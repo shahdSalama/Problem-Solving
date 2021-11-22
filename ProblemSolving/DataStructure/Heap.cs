@@ -6,6 +6,10 @@ namespace HackerRank.DataStructure
 {
     public class MinHeap
     {
+        static int capacity = 10;
+        int size;
+        int[] items = new int[capacity];
+
         int getLeftChildIndex(int i) { return i * 2 + 1; }
         int getRightChildIndex(int i) { return i * 2 + 2; }
         int getParentIndex(int i) { return (i - 1) / 2; }
@@ -35,12 +39,41 @@ namespace HackerRank.DataStructure
             }
         }
 
+        /// <summary>
+        /// it goes as the last element and then we bubble up until we restore the heap property
+        /// </summary>
+        /// <param name="x"></param>
         void addElement(int x)
         {
             EnsureExtraCapacity();
             items[size] = x;
             size++;
             heapifyUp();
+        }
+        /// <summary>
+        /// look at the min element , which is the root node
+        /// </summary>
+        /// <returns></returns>
+        int peak()
+        {
+            if (size == 0) throw new InvalidOperationException();
+            return items[0];
+        }
+
+
+        /// <summary>
+        /// remove the min element which is the root node
+        /// </summary>
+        int poll()
+        {
+            if (size == 0) throw new InvalidOperationException();
+
+            items[0] = items[size - 1];
+            size--;
+
+            heapifyDown();
+            return items[0];
+
         }
 
 
@@ -74,48 +107,11 @@ namespace HackerRank.DataStructure
         void heapifyUp()
         {
             int index = items[size - 1];
-            while (true)
+            while (HasParent(index) && items[index] < GetParent(index))
             {
-                if (HasParent(index) && items[index] < GetParent(index))
-                {
-                    swap(index, getParentIndex(index));
-                    index = getParentIndex(index);
-                }
-                else
-                    break;
+                swap(index, getParentIndex(index));
+                index = getParentIndex(index);
             }
         }
-
-
-        /// <summary>
-        /// look at the min element , which is the root node
-        /// </summary>
-        /// <returns></returns>
-        int peak()
-        {
-            if (size == 0) throw new InvalidOperationException();
-            return items[0];
-        }
-
-
-        /// <summary>
-        /// remove the min element which is the root node
-        /// </summary>
-        int poll()
-        {
-            if (size == 0) throw new InvalidOperationException();
-
-            items[0] = items[size - 1];
-            size--;
-
-            heapifyDown();
-            return items[0];
-
-        }
-
-
-        static int capacity = 10;
-        int size;
-        int[] items = new int[capacity];
     }
 }
