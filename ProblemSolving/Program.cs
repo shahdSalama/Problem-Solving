@@ -37,10 +37,15 @@ namespace HackerRank
             //SinglyLinkedList.Print(llist3, " ");
             //Console.WriteLine();
 
-            List<int> arr = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList();
+            MaxHeap h1 = new MaxHeap();
+            h1.items = new int[] { 4, 10, 3, 5, 1 };
+            h1.size = 5;
 
-            MinMaxSum.miniMaxSum(arr);
+            // the aim is to sort in desc order
 
+            // put heap in order
+            h1.heapifyDown();
+         
 
         }
 

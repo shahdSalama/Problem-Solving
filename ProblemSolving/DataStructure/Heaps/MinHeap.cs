@@ -6,9 +6,9 @@ namespace HackerRank.DataStructure
 {
     public class MinHeap
     {
-        static int capacity = 10;
-        int size;
-        int[] items = new int[capacity];
+        public static int capacity = 10;
+        public int size;
+        public int[] items = new int[capacity];
 
         int getLeftChildIndex(int i) { return i * 2 + 1; }
         int getRightChildIndex(int i) { return i * 2 + 2; }
@@ -21,7 +21,7 @@ namespace HackerRank.DataStructure
         int GetParent(int i) { return items[getParentIndex(i)]; }
 
 
-        void swap(int indexOne, int indexTwo)
+       public void swap(int indexOne, int indexTwo)
         {
             int temp = items[indexOne];
             items[indexOne] = items[indexTwo];
@@ -43,7 +43,7 @@ namespace HackerRank.DataStructure
         /// it goes as the last element and then we bubble up until we restore the heap property
         /// </summary>
         /// <param name="x"></param>
-        void addElement(int x)
+        public void addElement(int x)
         {
             EnsureExtraCapacity();
             items[size] = x;
@@ -54,7 +54,7 @@ namespace HackerRank.DataStructure
         /// look at the min element , which is the root node
         /// </summary>
         /// <returns></returns>
-        int peak()
+        public int peak()
         {
             if (size == 0) throw new InvalidOperationException();
             return items[0];
@@ -64,7 +64,7 @@ namespace HackerRank.DataStructure
         /// <summary>
         /// remove the min element which is the root node
         /// </summary>
-        int poll()
+        public int poll()
         {
             if (size == 0) throw new InvalidOperationException();
 
@@ -80,7 +80,7 @@ namespace HackerRank.DataStructure
         /// <summary>
         /// working on the min element which is at the top of the tree to put it in order and restor heap property
         /// </summary>
-        void heapifyDown()
+        public void heapifyDown()
         {
             int index = 0;
             while (hasLeftChild(index))
@@ -104,9 +104,9 @@ namespace HackerRank.DataStructure
         /// <summary>
         /// heapify up after adding an element so we will work on it
         /// </summary>
-        void heapifyUp()
+        public void heapifyUp()
         {
-            int index = items[size - 1];
+            int index = size - 1;
             while (HasParent(index) && items[index] < GetParent(index))
             {
                 swap(index, getParentIndex(index));
