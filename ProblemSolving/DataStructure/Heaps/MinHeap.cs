@@ -67,12 +67,12 @@ namespace HackerRank.DataStructure
         public int poll()
         {
             if (size == 0) throw new InvalidOperationException();
-
+            int root = items[0];
             items[0] = items[size - 1];
             size--;
 
             heapifyDown();
-            return items[0];
+            return root;
 
         }
 

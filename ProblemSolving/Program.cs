@@ -9,8 +9,8 @@ namespace HackerRank
 {
     class Program
     {
-        static void Main(string[] args)
-        {
+      //  static void Main(string[] args)
+        //{
 
             //SinglyLinkedList llist1 = new SinglyLinkedList();
 
@@ -37,17 +37,17 @@ namespace HackerRank
             //SinglyLinkedList.Print(llist3, " ");
             //Console.WriteLine();
 
-            MaxHeap h1 = new MaxHeap();
-            h1.items = new int[] { 4, 10, 3, 5, 1 };
-            h1.size = 5;
+        //    MaxHeap h1 = new MaxHeap();
+        //    h1.items = new int[] { 4, 10, 3, 5, 1 };
+        //    h1.size = 5;
 
-            // the aim is to sort in desc order
+        //    // the aim is to sort in desc order
 
-            // put heap in order
-            h1.heapifyDown();
+        //    // put heap in order
+        //    h1.heapifyDown();
          
 
-        }
+        //}
 
 
     }

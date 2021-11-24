@@ -70,7 +70,6 @@ namespace HackerRank.DataStructure
             int item = items[0];
             items[0] = items[size - 1];
             size--;
-
             heapifyDown();
             return item;
 
