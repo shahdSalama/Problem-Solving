@@ -28,34 +28,29 @@ class SumPairs
     public static int divisibleSumPairs(int n, int k, List<int> ar)
     {
         int[] remainders = new int[k];
-        double pairCount = 0;
-        for (int i = 0; i < ar.Count; i++)
+
+        for (int i = 0; i < n; i++)
         {
             int remainder = ar[i] % k;
             remainders[remainder]++;
         }
-        double remaindersHalf = (double)remainders.Count() / 2;
+        double pairCount = (double)(remainders[0] * (remainders[0] - 1)) / 2;
+        double remaindersHalf = (double)k / 2;
 
         for (int i = 1; i <= remaindersHalf; i++)
         {
             int numberOfRemaindersInIndex = remainders[i];
-            if (remainders[k - i] != 0)
+            if ((k - i) == remaindersHalf && k % 2 == 0)
             {
-                if ((k - i) == remaindersHalf && k % 2 == 0)
-                {
-                    pairCount += (double)(remainders[i] * (remainders[i] - 1)) / 2;
-                }
-                else
-                {
-                    int numberOfComplementaryRemainders = remainders[k - i];
-                    int pairs = numberOfComplementaryRemainders * numberOfRemaindersInIndex;
-                    pairCount += pairs;
-                }
+                pairCount += (double)(remainders[i] * (remainders[i] - 1)) / 2;
             }
-        }
-        if (remainders[0] > 1)
-        {
-            pairCount += (double)(remainders[0] * (remainders[0] - 1)) / 2;
+            else
+            {
+                int numberOfComplementaryRemainders = remainders[k - i];
+                int pairs = numberOfComplementaryRemainders * numberOfRemaindersInIndex;
+                pairCount += pairs;
+            }
+
         }
         return Convert.ToInt32(pairCount);
     }
