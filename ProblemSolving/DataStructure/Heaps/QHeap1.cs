@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 class Solution1
 {
-    static void Main(String[] args)
+    static void Run()
     {
         List<int> output = new List<int>();
         int queryCount = Convert.ToInt32(Console.ReadLine());
