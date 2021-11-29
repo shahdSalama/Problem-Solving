@@ -56,21 +56,21 @@ class SumPairs
     }
 }
 
-class Solutionm
+class Solution1
 {
-    public static void Main(string[] args)
-    {
+    //public static void Main(string[] args)
+    //{
 
 
-        string[] firstMultipleInput = Console.ReadLine().TrimEnd().Split(' ');
+    //    string[] firstMultipleInput = Console.ReadLine().TrimEnd().Split(' ');
 
-        int n = Convert.ToInt32(firstMultipleInput[0]);
+    //    int n = Convert.ToInt32(firstMultipleInput[0]);
 
-        int k = Convert.ToInt32(firstMultipleInput[1]);
+    //    int k = Convert.ToInt32(firstMultipleInput[1]);
 
-        List<int> ar = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arTemp => Convert.ToInt32(arTemp)).ToList();
+    //    List<int> ar = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arTemp => Convert.ToInt32(arTemp)).ToList();
 
-        int result = SumPairs.divisibleSumPairs(n, k, ar);
+    //    int result = SumPairs.divisibleSumPairs(n, k, ar);
 
-    }
+    //}
 }

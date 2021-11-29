@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-class Solution1
+class QHeap1
 {
     static void Run()
     {

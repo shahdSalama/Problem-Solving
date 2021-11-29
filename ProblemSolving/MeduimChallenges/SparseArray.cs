@@ -11,7 +11,6 @@ namespace HackerRank.MeduimChallenges
         {
             Dictionary<string, int> stringsFrequency = new Dictionary<string,
              int>();
-            Console.WriteLine("mm");
             for (int i = 0; i < strings.Count; i++)
             {
                 int value;

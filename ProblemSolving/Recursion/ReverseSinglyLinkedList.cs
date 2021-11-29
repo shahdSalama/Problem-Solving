@@ -1,11 +1,8 @@
 ﻿using HackerRank.DataStructure;
 using System;
 
-public class Solution
+public class ReverseSinglyLinkedList
 {
-
-   
-
     public static void reversePrint(SinglyLinkedListNode llist)
     {
         if (llist == null)
