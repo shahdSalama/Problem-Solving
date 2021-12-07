@@ -39,19 +39,19 @@ namespace HackerRank.Algorithms.Sort
             }
         }
 
-        public static void MergeSort(int [] arr, int l, int h)
-        {
-            int mid = (l + h) / 2;
+        //public static void MergeSort(int [] arr, int l, int h)
+        //{
+        //    int mid = (l + h) / 2;
 
-            if (l < h)
-            {
+        //    if (l < h)
+        //    {
 
-                MergeSort(arr, l, mid);
-                MergeSort(arr, mid + 1, h);
-                Merge(arr);
-            }
+        //        MergeSort(arr, l, mid);
+        //        MergeSort(arr, mid + 1, h);
+        //        Merge(arr);
+        //    }
         
-        }
+        //}
 
     }
 

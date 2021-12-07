@@ -74,22 +74,22 @@ class BiggerIsGreater
 
 class Solution
 {
-    public static void Main(string[] args)
-    {
-        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+    //public static void Main(string[] args)
+    //{
+    //    TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
-        int T = Convert.ToInt32(Console.ReadLine().Trim());
+    //    int T = Convert.ToInt32(Console.ReadLine().Trim());
 
-        for (int TItr = 0; TItr < T; TItr++)
-        {
-            string w = Console.ReadLine();
+    //    for (int TItr = 0; TItr < T; TItr++)
+    //    {
+    //        string w = Console.ReadLine();
 
-            string result = Result.biggerIsGreater(w);
+    //        //string result = Result.biggerIsGreater(w);
 
-            textWriter.WriteLine(result);
-        }
+    //        textWriter.WriteLine(result);
+    //    }
 
-        textWriter.Flush();
-        textWriter.Close();
-    }
+    //    textWriter.Flush();
+    //    textWriter.Close();
+    //}
 }
