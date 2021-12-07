@@ -16,65 +16,98 @@ class BalancedBraces
 {
 
 
+
     // Complete the braces function below.
+
+    static bool IsPairs(char a, char b, Dictionary<char,char> dic) 
+    {
+        return dic[a] == b;
+    }
+
+
+
+
     static string[] braces(string[] values)
     {
+      
 
         string[] result = new string[values.Length];
 
         for (int i = 0; i < values.Count(); i++)
         {
-            var stack = new Stack<char>();
-
-            for (int j = 0; j < values[i].Length; j++)
-            {
-                if (values[i][j] == '[' || values[i][j] == '{' || values[i][j] == '(')
-                {
-                    stack.Push(values[i][j]);
-                }
-
-
-                else if (values[i][j] == ']' || values[i][j] == '}' || values[i][j] == ')')
-                {
-                    if (stack.Count == 0)
-                    {
-                        result[i] = "NO";
-                        break;
-                    }
-
-                    var peak = stack.Peek();
-
-                    if (values[i][j] == ']' && peak == '[')
-                        stack.Pop();
-                    else if (values[i][j] == '}' && peak == '{')
-                        stack.Pop();
-                    else if (values[i][j] == ')' && peak == '(')
-                        stack.Pop();
-
-
-                    else
-                    {
-                        result[i] = "NO";
-                        break;
-                    }
-                }
-
-            }
-            if (stack.Count == 0 && string.IsNullOrEmpty(result[i]))
-                result[i] = "YES";
-            else { result[i] = "NO"; }
-
+            result[i] = isBalanced(values[i]);
         }
+        return result;
+    }
+
+    public static string isBalanced(string s)
+    {
+        Dictionary<char, char> pairs = new Dictionary<char, char>();
+
+        string result = "";
+
+        pairs.Add('(', ')');
+        pairs.Add('[', ']');
+        pairs.Add('{', '}');
+
+
+        pairs.Add(')', '(');
+        pairs.Add(']', '[');
+        pairs.Add('}', '{');
+
+        List<char> opened = new List<char>() { '[', '{', '(' };
+        List<char> closed = new List<char>() { ']', '}', ')' };
+
+        var stack = new Stack<char>();
+
+        for (int j = 0; j < s.Length; j++)
+        {
+            if (opened.Contains(s[j]))
+            {
+                stack.Push(s[j]);
+            }
+
+            else if (closed.Contains(s[j]))
+            {
+                if (stack.Count == 0)
+                {
+                    result = "NO";
+                    break;
+                }
+
+                var peak = stack.Peek();
+
+                if (IsPairs(s[j], peak, pairs))
+                    stack.Pop();
+                else
+                {
+                    result = "NO";
+                    break;
+                }
+            }
+        }
+        if (stack.Count == 0 && string.IsNullOrEmpty(result))
+            result = "YES";
+        else
+            result = "NO";
         return result;
     }
     public static void Main(string[] args)
     {
-        var brases = new string[4];
-        brases[0] = "}{{}{";
-        brases[1] = "({})(){{";
-        brases[2] = "({})()";
-        brases[3] = "{{{{{]({})()";
+        var brases = new string[6];
+
+        brases[0] = "({})";
+        brases[1] = "}][}}(}][))]";
+        brases[2] = "[](){ ()}";
+        brases[3] = "()";
+        brases[4] = "({ } ([][]))[]()";
+        brases[5] = "{)[](}]}]}))}(())(";
+
+
         var res = braces(brases);
+
+
+
 
 
     }
