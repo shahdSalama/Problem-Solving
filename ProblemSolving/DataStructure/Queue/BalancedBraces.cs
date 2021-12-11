@@ -92,23 +92,23 @@ class BalancedBraces
             result = "NO";
         return result;
     }
-    public static void Main(string[] args)
-    {
-        var brases = new string[6];
+    //public static void Main(string[] args)
+    //{
+    //    var brases = new string[6];
 
-        brases[0] = "({})";
-        brases[1] = "}][}}(}][))]";
-        brases[2] = "[](){ ()}";
-        brases[3] = "()";
-        brases[4] = "({ } ([][]))[]()";
-        brases[5] = "{)[](}]}]}))}(())(";
-
-
-        var res = braces(brases);
+    //    brases[0] = "({})";
+    //    brases[1] = "}][}}(}][))]";
+    //    brases[2] = "[](){ ()}";
+    //    brases[3] = "()";
+    //    brases[4] = "({ } ([][]))[]()";
+    //    brases[5] = "{)[](}]}]}))}(())(";
 
 
+    //    var res = braces(brases);
 
 
 
-    }
+
+
+    //}
 }
