@@ -44,13 +44,7 @@ namespace HackerRank.Easy
         }
 
 
-        public static void Main(string[] args)
-        {
-
-            int x = (7-4) / 2;
-
-      
-        }
+       
 
     }
 }
