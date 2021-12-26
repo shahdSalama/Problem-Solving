@@ -46,16 +46,16 @@ namespace HackerRank.Easy
         }
 
 
-        public static void Main(string[] args)
-        {
-            int q = Convert.ToInt32(Console.ReadLine().Trim());
+        //public static void Main(string[] args)
+        //{
+        //    int q = Convert.ToInt32(Console.ReadLine().Trim());
 
-            for (int qItr = 0; qItr < q; qItr++)
-            {
-                string s = Console.ReadLine();
+        //    for (int qItr = 0; qItr < q; qItr++)
+        //    {
+        //        string s = Console.ReadLine();
 
-                SepareteTheNumbers.separateNumbers(s);
-            }
-        }
+        //        SepareteTheNumbers.separateNumbers(s);
+        //    }
+        //}
     }
 }
