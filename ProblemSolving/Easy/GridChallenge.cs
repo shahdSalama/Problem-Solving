@@ -34,29 +34,9 @@ namespace HackerRank.Easy
             }
             return sorted ? "YES" : "NO";
         }
-        public static void Main(string[] args)
-        {
-           
-            int t = Convert.ToInt32(Console.ReadLine().Trim());
-
-            for (int tItr = 0; tItr < t; tItr++)
-            {
-                int n = Convert.ToInt32(Console.ReadLine().Trim());
-
-                List<string> grid = new List<string>();
-
-                for (int i = 0; i < n; i++)
-                {
-                    string gridItem = Console.ReadLine();
-                    grid.Add(gridItem);
-                }
-
-                string result = gridChallenge(grid);
-
-              
-            }
+       
 
            
         }
-    }
+   
 }
