@@ -10,19 +10,12 @@ namespace HackerRank
     public class MagicSquare
     {
 
-        /*
-         * Complete the 'formingMagicSquare' function below.
-         *
-         * The function is expected to return an INTEGER.
-         * The function accepts 2D_INTEGER_ARRAY s as parameter.
-         */
 
         public static int FormingMagicSquare(List<List<int>> s)
         {
             List<List<int>> one = new List<List<int>> { new List<int> { 8, 3, 4 }, new List<int> { 1, 5, 9 }, new List<int> { 6, 7, 2 } };
 
-            List<List<int>> two
-                = SwitchRows(one);
+            List<List<int>> two = SwitchRows(one);
 
             List<List<int>> three = SwitchColumns(one);
 
@@ -51,7 +44,7 @@ namespace HackerRank
             return subtractingResult.OrderBy(num => num).FirstOrDefault();
         }
 
-        private static List<int>  SubtractingInputFromallTheMatrixes(List<List<int>> s, Dictionary<int, List<List<int>>> predefined)
+        private static List<int> SubtractingInputFromallTheMatrixes(List<List<int>> s, Dictionary<int, List<List<int>>> predefined)
         {
             List<int> subtractingResult = new List<int>();
 
@@ -67,7 +60,7 @@ namespace HackerRank
 
         private static int sumMatrix(List<List<int>> s)
         {
-            int result =  0;
+            int result = 0;
 
             for (int i = 0; i < 3; i++)
             {
@@ -76,16 +69,16 @@ namespace HackerRank
                     result += s[i][j];
                 }
             }
-            return result; 
+            return result;
         }
 
         private static List<List<int>> Subtract(List<List<int>> s, List<List<int>> value)
         {
             List<List<int>> result = new List<List<int>>();
-           
+
             for (int i = 0; i < 3; i++)
             {
-                result.Add(new List<int> {0,0,0 });
+                result.Add(new List<int> { 0, 0, 0 });
             }
 
             for (int i = 0; i < 3; i++)
@@ -147,6 +140,7 @@ namespace HackerRank
 
             return result;
         }
+
     }
 
 }

@@ -1,31 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Numerics;
 
 namespace HackerRank.Easy
 {
     class ModifiedFib
     {
-        public static long fibonacciModified(long A, long B, int N)
-        {
-            
-
-            long F = 0;
-            for (int i = 2; i < N; i++)
+       
+            public static BigInteger fibonacciModified(BigInteger t1, BigInteger t2, BigInteger n)
             {
-                F = A + B * B;
-                A = B;
-                B = F;
+            BigInteger t3 = 0;
+                while (n != 2)
+                {
+                    t3 = t1 + t2 * t2;
+                    t1 = t2;
+                    t2 = t3;
+                    n--;
+                }
+                return t3;
             }
-            return F;
+
+            public static void Main(string[] args)
+            {
+                fibonacciModified(0, 1, 10);
+
+            }
+
+
         }
-    
-        public static void Main(string[] args)
-        {
-            fibonacciModified(0, 1, 10);
-
-        }
-
-
-    }
     }
