@@ -21,11 +21,11 @@ namespace HackerRank.Easy
                 return t3;
             }
 
-            public static void Main(string[] args)
-            {
-                fibonacciModified(0, 1, 10);
+            //public static void Main(string[] args)
+            //{
+            //    fibonacciModified(0, 1, 10);
 
-            }
+            //}
 
 
         }

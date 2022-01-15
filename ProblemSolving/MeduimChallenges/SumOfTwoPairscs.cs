@@ -56,7 +56,7 @@ class SumPairs
     }
 }
 
-class Solution1
+class Solution12
 {
     //public static void Main(string[] args)
     //{

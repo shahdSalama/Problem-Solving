@@ -9,30 +9,54 @@ namespace HackerRank.Algorithms.Sort
     {
         public static void countSort(List<List<string>> arr)
         {
-
-            List<List<string>> sorted = new List<List<string>>();
+            List<string> sorted = new List<string>();
 
             for (int i = 0; i < 100; i++)
             {
-                sorted.Add(new List<string>());
+                sorted.Add(" ");
             }
 
             for (int i = 0; i < arr.Count / 2; i++)
             {
-                sorted[Convert.ToInt32(arr[i][0])].Add("-");
+                sorted[Convert.ToInt32(arr[i][0])]+= "- ";
             }
 
             for (int i = arr.Count / 2; i < arr.Count; i++)
             {
-                sorted[Convert.ToInt32(arr[i][0])].Add(arr[i][1]);
+                sorted[Convert.ToInt32(arr[i][0])] += (" " + arr[i][1]);
             }
 
-            var flattened = sorted.SelectMany(x => x).ToList();
-            for (int i = 0; i < flattened.Count; i++)
+            var s = string.Join("", sorted);
+
+           
+            for (int i = 0; i < s.Length -1; i++)
             {
-                Console.Write(flattened[i] + " ");
+
+                if (s[i] == s[i + 1])
+                   s= s.Remove(i, 1);
+            
+            }
+
+            for (int i = 0; i < arr.Count; i++)
+            {
+                Console.Write(sorted[i]);
             }
         }
+
+        //public static void Main(string[] args)
+        //{
+        //    int n = Convert.ToInt32(Console.ReadLine().Trim());
+
+        //    List<List<string>> arr = new List<List<string>>();
+
+        //    for (int i = 0; i < n; i++)
+        //    {
+        //        arr.Add(Console.ReadLine().TrimEnd().Split(' ').ToList());
+        //    }
+
+        //    countSort(arr);
+        //}
+
 
     }
 
