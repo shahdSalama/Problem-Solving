@@ -65,16 +65,16 @@ namespace HackerRank.MeduimChallenges
         }
 
 
-        public static void Main(string[] args)
-        {
-            //  TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+        //public static void Main(string[] args)
+        //{
+        //    //  TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
-            string s = Console.ReadLine();
+        //    string s = Console.ReadLine();
 
-            string result = isValid(s);
+        //    string result = isValid(s);
 
 
-        }
+        //}
 
     }
 }
