@@ -7,6 +7,26 @@ namespace HackerRank.MeduimChallenges
 {
     class SherlokAndValidStrings
     {
+        public static bool IsAllSameOrOnlyOneIsMoreByOne2(List<int> LetterFrequency)
+        {
+
+            if (LetterFrequency.All(x => x == LetterFrequency[0])) return true;
+            var groups = LetterFrequency.GroupBy(x => x);
+            var oneCount = groups.Where(x => x.Key == 1).Select(x => x.Count());
+            var temp = LetterFrequency;
+            temp.Remove(1);
+
+            if (temp.All(x => x == temp[0])) return true;
+
+            var max = LetterFrequency.Max();
+
+            var maxIndex = LetterFrequency.IndexOf(max);
+            LetterFrequency[maxIndex]--;
+
+            if (LetterFrequency.All(x => x == LetterFrequency[0])) return true;
+            return false;
+
+        }
         public static bool IsAllSameOrOnlyOneIsMoreByOne(List<int> list)
         {
             // dic key is element in list we are suppose to have only 
@@ -59,7 +79,7 @@ namespace HackerRank.MeduimChallenges
             }
 
             var values = dic.Values.ToList();
-            if (IsAllSameOrOnlyOneIsMoreByOne(values)) return "YES";
+            if (IsAllSameOrOnlyOneIsMoreByOne2(values)) return "YES";
             else return "NO";
 
         }
