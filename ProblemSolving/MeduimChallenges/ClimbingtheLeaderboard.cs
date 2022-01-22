@@ -79,21 +79,6 @@ namespace HackerRank.MeduimChallenges
             return -1;
         }
 
-        public static void Main(string[] args)
-        {
-           // TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
-
-            int rankedCount = Convert.ToInt32(Console.ReadLine().Trim());
-
-            List<int> ranked = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(rankedTemp => Convert.ToInt32(rankedTemp)).ToList();
-
-            int playerCount = Convert.ToInt32(Console.ReadLine().Trim());
-
-            List<int> player = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(playerTemp => Convert.ToInt32(playerTemp)).ToList();
-
-            List<int> result = climbingLeaderboard(ranked, player);
-
-          
-        }
+       
     }
 }
