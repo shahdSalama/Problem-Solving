@@ -32,12 +32,12 @@ namespace HackerRank.MeduimChallenges
             }
             return new List<int> { };
         }
-        public static void Main(string[] args)
-        {
-              icecreamParlor(4, new List<int> { 1, 4, 5, 3 ,2 });
+        //public static void Main(string[] args)
+        //{
+        //      icecreamParlor(4, new List<int> { 1, 4, 5, 3 ,2 });
 
 
 
-        }
+        //}
     }
 }
