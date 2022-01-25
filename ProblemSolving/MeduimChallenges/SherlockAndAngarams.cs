@@ -7,10 +7,10 @@ namespace HackerRank.MeduimChallenges
 {
     class SherlockAndAngarams
     {
-        public static void Main()
-        {
-            sherlockAndAnagrams("cdcd");
-        }
+        //public static void Main()
+        //{
+        //    sherlockAndAnagrams("cdcd");
+        //}
 
         public static List<string> GetAllSubstrings(string s)
         {
@@ -39,8 +39,10 @@ namespace HackerRank.MeduimChallenges
 
         public static int sherlockAndAnagrams(string s)
         {
+           
             var subs = GetAllSubstrings(s);
             var dic = new Dictionary<string, int>();
+           
             for (int i = 0; i < subs.Count; i++)
             {
                 string arranged = arrangedString(subs[i]);
