@@ -9,34 +9,27 @@ namespace HackerRank.ExamsandMocks
     {
         public static void Main()
         {
-       
+            minCost("aaabbbabbbb", new int[] { 5, 3, 10, 7, 5, 3, 5, 5, 4, 8, 1 });
         }
 
-      
-        public int StringDeletionMinCost(String S, int[] C)
+
+        public static int minCost(String s, int[] cost)
         {
-            var jagged = new List<List<string>>();
-            for (int i = 0; i < S.Length; i++)
+            int n = s.Length, gsum = 0, gmax = 0, ans = 0;
+            for (int i = 0; i < n; i++)
             {
-                jagged.Add(new List<string> { S[i].ToString(), C[i].ToString() });
-            }
-
-            int count = 0;
-            for (int i = 0; i < jagged.Count - 1; i++)
-            {
-                if (jagged[i][0] == jagged[i + 1][0])
+                if (i > 0 && s[i] != s[i - 1])
                 {
-                    if (Convert.ToInt32(jagged[i][1]) < Convert.ToInt32(jagged[i + 1][1]))
-                    {
-                        count += Convert.ToInt32(Convert.ToInt32(jagged[i][1]));
-
-                    }
-                    else count += Convert.ToInt32(Convert.ToInt32(jagged[i + 1][1]));
-
+                    ans += gsum - gmax;
+                    gsum = 0;
+                    gmax = 0;
                 }
+                gsum += cost[i];
+                gmax = Math.Max(gmax, cost[i]);
             }
-            return count;
 
+            ans += gsum - gmax;
+            return ans;
         }
 
         public static int CompanyExpenses(int[] A)
