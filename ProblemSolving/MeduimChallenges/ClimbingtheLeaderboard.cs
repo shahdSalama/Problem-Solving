@@ -78,7 +78,5 @@ namespace HackerRank.MeduimChallenges
             }
             return -1;
         }
-
-       
     }
 }

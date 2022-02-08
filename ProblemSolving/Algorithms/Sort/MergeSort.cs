@@ -1,56 +1,69 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace HackerRank.Algorithms.Sort
 {
     public class MergeSort
     {
-        public static void Merge(int[] A, int[] B)
+        static public void Merge(int[] data, int startSub, int midSub, int endSub)
         {
-            int[] C = new int[A.Length + B.Length];
-
-            int i = 0;
-            int j = 0;
+            int[] temp = new int[endSub - startSub + 1];
+            int i = startSub; int j = midSub + 1;
             int k = 0;
-
-            while (i <= A.Length && j <= B.Length)
+            while (i <= startSub && j <= endSub)
             {
-                if (A[i] < B[j])
+                if (data[i] <= data[j])
                 {
-                    C[k] = A[i];
-                    i++; k++;
+                    temp[k++] = data[i++];
                 }
                 else
                 {
-                    C[k] = B[j];
-                    j++; k++;
+                    temp[k++] = data[j++];
                 }
             }
+            while (i <= midSub)
+            {
+
+                temp[k++] = data[i++];
+            }
+            while (j <= endSub)
+            {
+
+                temp[k++] = data[j++];
+            }
+
+            for (i = startSub; i <= endSub; i++)
+            {
+                data[i] = temp[i - startSub];
+            }
 
 
-            for (; i <= A.Length; i++)
-            {
-                C[k] = A[i]; k++;
-            }
-            for (; j <= B.Length; j++)
-            {
-                C[k] = B[j]; k++;
-            }
+
         }
 
-        //public static void MergeSort(int [] arr, int l, int h)
+        /// <summary>
+        /// the function manipulates the array
+        /// </summary>
+        /// <param name="numbers"></param>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        static public void SortMerge(int[] numbers, int start, int end)
+        {
+           // stopping condition
+            if (end > start)
+            {
+                int mid = (end + start) / 2;
+                SortMerge(numbers, start, mid); // first half till mid
+                SortMerge(numbers, (mid + 1), end); // seconf half from mid + 1
+                Merge(numbers, start, (mid + 1), end); // merge both halves
+            }
+        }
+        //public static void Main(string[] args)
         //{
-        //    int mid = (l + h) / 2;
-
-        //    if (l < h)
-        //    {
-
-        //        MergeSort(arr, l, mid);
-        //        MergeSort(arr, mid + 1, h);
-        //        Merge(arr);
-        //    }
-        
+        //    var x = new int[] { 3, 6, 1, 5, 4, 2, };
+        //    SortMerge(x, 0, 5);
         //}
 
     }
