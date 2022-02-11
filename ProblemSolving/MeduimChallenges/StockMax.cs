@@ -65,26 +65,26 @@ namespace HackerRank.MeduimChallenges
 
         }
 
-        public static void Main(string[] args)
-        {
-            //TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+        //public static void Main(string[] args)
+        //{
+        //    //TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
-            int t = Convert.ToInt32(Console.ReadLine().Trim());
+        //    int t = Convert.ToInt32(Console.ReadLine().Trim());
 
-            for (int tItr = 0; tItr < t; tItr++)
-            {
-                int n = Convert.ToInt32(Console.ReadLine().Trim());
+        //    for (int tItr = 0; tItr < t; tItr++)
+        //    {
+        //        int n = Convert.ToInt32(Console.ReadLine().Trim());
 
-                List<int> prices = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(pricesTemp => Convert.ToInt32(pricesTemp)).ToList();
+        //        List<int> prices = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(pricesTemp => Convert.ToInt32(pricesTemp)).ToList();
 
-                long result = stockmax(prices);
+        //        long result = stockmax(prices);
 
-                // textWriter.WriteLine(result);
-            }
+        //        // textWriter.WriteLine(result);
+        //    }
 
             //  textWriter.Flush();
             // textWriter.Close();
         }
 
     }
-}
+//}

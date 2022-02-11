@@ -57,24 +57,26 @@ namespace HackerRank.DataStructure.Tree.Traversal
             }
         }
 
-        public static void PrintLevelOrderWithQueue(TreeNode root)
+        public static List<TreeNode> PrintLevelOrderWithQueue(TreeNode root)
         {
+            List<TreeNode> result = new List<TreeNode>();
             var q = new Queue<TreeNode>();
-            q.Enqueue(root);
+            if (root != null)
+            {
+                q.Enqueue(root);
+            }
 
             while (q.Count != 0)
             {
-                var tempNode = q.Dequeue();
+                var curr = q.Dequeue();
 
-                Console.Write(tempNode.data);
+                result.Add(curr);
 
-                if (tempNode.left != null)
-                    q.Enqueue(tempNode.left);
-                if (tempNode.right != null)
-                    q.Enqueue(tempNode.right);
+                if (curr.left != null)  q.Enqueue(curr.left);
+                if (curr.right != null) q.Enqueue(curr.right);
 
             }
-
+            return result;
 
         }
 
@@ -84,14 +86,19 @@ namespace HackerRank.DataStructure.Tree.Traversal
 
         //    root.left = new TreeNode(2);
         //    root.right = new TreeNode(5);
-           
+
         //    root.left.left = new TreeNode(1);
         //    root.right.left = new TreeNode(4);
         //    root.right.right = new TreeNode(6);
         //    root.right.right.right = new TreeNode(7);
         //    Console.WriteLine("level order traversal "
         //                      + "of binary tree is ");
-        //    PrintLevelOrderWithLoop(root);
+        //    var res = PrintLevelOrderWithQueue(root);
+        //    //    3 
+
+        //    //2        5
+        //  //1          4   6
+        //  //                          7
         //}
 
     }
