@@ -71,17 +71,17 @@ namespace HackerRank.DataStructure.Tree
 
 
 
-        public static void Main(String[] args)
-        {
+        //public static void Main(String[] args)
+        //{
 
-            TreeNode root = new TreeNode(6);
-            root.left = new TreeNode(2);
-            root.right = new TreeNode(8);
-            root.left.left = new TreeNode(0);
-            root.left.right = new TreeNode(4);
-            var x = LowestCommonAncestor(root, root.left, root.left.right);
+        //    TreeNode root = new TreeNode(6);
+        //    root.left = new TreeNode(2);
+        //    root.right = new TreeNode(8);
+        //    root.left.left = new TreeNode(0);
+        //    root.left.right = new TreeNode(4);
+        //    var x = LowestCommonAncestor(root, root.left, root.left.right);
 
-            //  var path = DFS(root, new List<int>(), new Node(5));
-        }
+        //    //  var path = DFS(root, new List<int>(), new Node(5));
+        //}
     }
 }

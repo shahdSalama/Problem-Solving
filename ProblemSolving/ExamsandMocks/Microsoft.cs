@@ -28,6 +28,51 @@ namespace HackerRank.ExamsandMocks
         //}
 
 
+
+        ///  ca  
+        // a -> apple
+        // b -> book
+        // c -> car, cat, cycle, category
+        // result => car
+        public static List<string> autoComplete(string word, List<string> db)
+        {
+            var dictionary = ConstructDcitioray(db);
+            var results = new List<string>();
+            // try to see if the first letter exists
+            var character = word[0]; // c
+            int searchWordLength = word.Length; // 2
+            if (dictionary.TryGetValue(character, out List<string> values))
+            {
+                foreach (var cand in values) // car
+                {
+                    var trimmedCand = cand.Substring(0, searchWordLength); // 
+                    if (word == trimmedCand)
+                        results.Add(cand);
+                }
+            }
+            return results;
+        }
+        //   apple, book, car, cat, cycle, category
+
+
+        public static Dictionary<char, List<string>> ConstructDcitioray(List<string> db)
+        {
+            var dic = new Dictionary<char, List<string>>();
+            foreach (var word in db) // apple
+            {
+                if (!dic.TryGetValue(word[0], out List<string> _))
+                {
+                    dic.Add(word[0], new List<string> { word });
+                }
+                else
+                {
+                    dic[word[0]].Add(word);
+                }
+            }
+            return dic;
+        }
+
+
         public static int minCost(String s, int[] cost)
         {
             int n = s.Length;
@@ -93,7 +138,7 @@ namespace HackerRank.ExamsandMocks
 
         }
 
-      
+    }
     }
 
 }
