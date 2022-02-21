@@ -7,17 +7,17 @@ namespace HackerRank.MeduimChallenges
 {
     class TwoChars
     {
-        public static void Main(string[] args)
-        {
+        //public static void Main(string[] args)
+        //{
          
 
-            int l = Convert.ToInt32(Console.ReadLine().Trim());
+        //    int l = Convert.ToInt32(Console.ReadLine().Trim());
 
-            string s = Console.ReadLine();
+        //    string s = Console.ReadLine();
 
-            int result = alternate(s);
+        //    int result = alternate(s);
 
-        }
+        //}
         static bool isTwoAlter(string s)
         {
 

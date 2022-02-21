@@ -15,7 +15,7 @@ namespace HackerRank.DataStructure
         int getParentIndex(int i) { return (i - 1) / 2; }
         bool hasRightChild(int i) { return getRightChildIndex(i) < size; }
         bool hasLeftChild(int i) { return getLeftChildIndex(i) < size; }
-        bool HasParent(int i) { return getParentIndex(i) >= 0; }
+        bool hasParent(int i) { return getParentIndex(i) >= 0; }
         int GetLeftChild(int i) { return items[getLeftChildIndex(i)]; }
         int GetRightChild(int i) { return items[getRightChildIndex(i)]; }
         int GetParent(int i) { return items[getParentIndex(i)]; }
@@ -78,7 +78,8 @@ namespace HackerRank.DataStructure
 
 
         /// <summary>
-        /// working on the min element which is at the top of the tree to put it in order and restor heap property
+        /// called after removing the min element (root) and replacing it with the last element
+        /// working on the root element which is at the top of the tree to put it in order and restore heap property
         /// </summary>
         public void heapifyDown()
         {
@@ -92,7 +93,7 @@ namespace HackerRank.DataStructure
                     minValue = GetRightChild(index);
                     minValueIndex = getRightChildIndex(index);
                 }
-                if (items[index] < minValue) break;
+                if (items[index] < minValue) break;  // heap property
                 else
                 {
                     swap(minValueIndex, index);
@@ -107,7 +108,7 @@ namespace HackerRank.DataStructure
         public void heapifyUp()
         {
             int index = size - 1;
-            while (HasParent(index) && items[index] < GetParent(index))
+            while (hasParent(index) && items[index] < GetParent(index))
             {
                 swap(index, getParentIndex(index));
                 index = getParentIndex(index);

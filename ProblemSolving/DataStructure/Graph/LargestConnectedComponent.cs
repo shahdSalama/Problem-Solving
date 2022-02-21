@@ -24,13 +24,13 @@ namespace HackerRank.DataStructure.Graph
 
 		public static int GetNodeCount(Dictionary<int, HashSet<int>> graph, int node, HashSet<int> visited)
 		{
-			int count = 0;
+		
 			var s = new Stack<int>();
 
 			s.Push(node);
-
 			visited.Add(node);
-			count++;
+			int count = 1;
+
 			while (s.Count != 0)
 			{
 				var current = s.Pop();
