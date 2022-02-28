@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace HackerRank.Dynamic_Programming
@@ -9,7 +10,8 @@ namespace HackerRank.Dynamic_Programming
 
         public static List<int> bestsum(int targetSum, int[] nums, Dictionary<int, List<int>> memo)
         {
-            if (memo.TryGetValue(targetSum, out List<int> val)) return val;
+            if (memo.TryGetValue(targetSum, out List<int> val)) 
+                return val;
             if (targetSum == 0) return new List<int>();
             if (targetSum < 0) return null;
 
@@ -21,10 +23,11 @@ namespace HackerRank.Dynamic_Programming
                 var remainderCombination = bestsum(remainder, nums, memo);
                 if (remainderCombination != null)
                 {
-                    remainderCombination.Add(num);
-                    if (shortestComb == null || shortestComb.Count > remainderCombination.Count)
+                    var combination = remainderCombination.ToList();
+                    combination.Add(num);
+                    if (shortestComb == null || shortestComb.Count > combination.Count)
                     {
-                        shortestComb = remainderCombination;
+                        shortestComb = combination;
                     }
                 }
 
@@ -32,17 +35,18 @@ namespace HackerRank.Dynamic_Programming
             memo.Add(targetSum, shortestComb);
             return shortestComb;
         }
-        public static void Main(String[] args)
-        {
-            //  var res5 = HowSum(3, new int[] { 2, 0, 5 });
-            //  var res2 = CoinChange(new int[] { 2, 3}, 7,  new Dictionary<int, List<int>>());
-            //  var res23 = CoinChange(new int[] { 5,3,4,7 }, 7, new Dictionary<int, List<int>>());
-            //  var res55 = CoinChange(new int[] {2, 4 }, 7, new Dictionary<int, List<int>>());
-            var r99es55 = bestsum(100, new int[] { 10, 25 }, new Dictionary<int, List<int>>());
-            // time n*m
-            // space : target = n
+        //public static void Main(String[] args)
+        //{
+        //    //  var res5 = HowSum(3, new int[] { 2, 0, 5 });
+        //    //  var res2 = CoinChange(new int[] { 2, 3}, 7,  new Dictionary<int, List<int>>());
+        //    //  var res23 = CoinChange(new int[] { 5,3,4,7 }, 7, new Dictionary<int, List<int>>());
+        //    //  var res55 = CoinChange(new int[] {2, 4 }, 7, new Dictionary<int, List<int>>());
+        //    var memo = new Dictionary<int, List<int>>();
+        //    var r99es55 = bestsum(100, new int[] { 1, 10,  25  }, memo);
+        //    // time n*m
+        //    // space : target = n
 
-        }
+        //}
 
     }
 }

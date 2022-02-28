@@ -29,18 +29,18 @@ namespace HackerRank.DataStructure.Tree
             paths.Add(path);
         }
 
-        public static void FindBinaryTreePaths(TreeNode root, Stack<int> q)
+        public static void FindBinaryTreePaths(TreeNode root, Stack<int> s)
         {
             if (root == null) return;
-            q.Push(root.val);
+            s.Push(root.val);
 
             if (IsLeaf(root))
             {
-                AddToListOfPaths(q);
+                AddToListOfPaths(s);
             }
-            FindBinaryTreePaths(root.left, q);
-            FindBinaryTreePaths(root.right, q);
-            if (q.Count != 0) q.Pop();
+            FindBinaryTreePaths(root.left, s);
+            FindBinaryTreePaths(root.right, s);
+            if (s.Count != 0) s.Pop();
 
         }
 

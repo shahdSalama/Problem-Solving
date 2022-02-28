@@ -11,12 +11,12 @@ namespace HackerRank.DataStructure.Graph
         {
             var graph = ConstructGraph(edges);
             var visited = new HashSet<int>();
-            var q = new Queue<(int node, int dest)>();
+            var q = new Queue<(int node, int distance)>();
             q.Enqueue((source, 0));
             while (q.Count != 0)
             {
-                var (node, dest) = q.Dequeue();
-                if (node == target) return dest;
+                var (node, distance) = q.Dequeue();
+                if (node == target) return distance;
                 
                 visited.Add(node);
 
@@ -25,7 +25,7 @@ namespace HackerRank.DataStructure.Graph
                     if (visited.Contains(nei)) continue;
                     else
                     {
-                        q.Enqueue((nei, dest + 1));
+                        q.Enqueue((nei, distance + 1));
                     }
                 }
             }
