@@ -35,10 +35,11 @@ namespace HackerRank.DataStructure.Graph
                 foreach (var neighbour in graph[current])
                 {
                     if (visited.Contains(neighbour)) continue;
+                   
                     visited.Add(neighbour);
                     s.Push(neighbour);
+                   
                     count++;
-
                 }
             }
             return count;

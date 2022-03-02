@@ -8,8 +8,9 @@ namespace HackerRank.DataStructure.Graph
     {
         public static int minimumMoves(List<string> grid, int startX, int startY, int goalX, int goalY)
         {
+            // shortest path bfs
             int reaches = int.MaxValue;
-
+                              //x,  y,    steps
             var q = new Queue<(int, int, int)>();
             var visited = new HashSet<(int, int)>();
 
@@ -21,11 +22,13 @@ namespace HackerRank.DataStructure.Graph
                 var (currX, currY, currM) = q.Dequeue();
                 foreach (var nei in GetNei(grid, currX, currY))
                 {
+                    int neiX = nei.Item1; 
+                    int neiY = nei.Item2;
 
-                    int neiX = nei.Item1; int neiY = nei.Item2;
                     if (visited.Contains((neiX, neiY))) continue;
+                    
+                    // reached the castle with moves less than last time.
                     if (neiX == goalX && neiY == goalY && currM + 1 < reaches) reaches = currM + 1;
-
 
                     visited.Add((neiX, neiY));
 
@@ -34,7 +37,6 @@ namespace HackerRank.DataStructure.Graph
             }
             return reaches;
         }
-
 
         public static List<(int, int)> GetNei(List<string> grid, int x, int y)
         {

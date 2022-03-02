@@ -1,6 +1,5 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Text;
 
 namespace HackerRank.DataStructure.Graph
 {
@@ -8,7 +7,7 @@ namespace HackerRank.DataStructure.Graph
     {
         public static int bestsumCount(int targetSum, int[] nums)
         {
-            // node, distance
+                           // node, distance
             var q = new Queue<(int, int)>();
             var visited = new HashSet<int>();
 
@@ -22,7 +21,9 @@ namespace HackerRank.DataStructure.Graph
                 var curr = q.Dequeue();
                 var currNum = curr.Item1;
                 var curDistance = curr.Item2;
+               
                 if (currNum == 0) return curDistance;
+               
                 foreach (var nie in GetNie(currNum, nums))
                 {
                     if (visited.Contains(nie)) continue;
@@ -49,44 +50,7 @@ namespace HackerRank.DataStructure.Graph
         }
 
 
-        // bfs // shortest path
-        public int CoinChange(int[] coins, int targetSum)
-        {
-            //                  num , distance
-            var q = new Queue<(int, int)>();
-            q.Enqueue((targetSum, 0));
-
-            while (q.Count != 0)
-            {
-                var curr = q.Dequeue();
-                var currNode = curr.Item1;
-                var currD = curr.Item2;
-                if (currNode == 0) return currD;
-                foreach (var nei in GetNei(currNode, coins))
-                {
-                    q.Enqueue((nei, currD + 1));
-                }
-
-            }
-
-            return -1;
-
-        }
-        public List<int> GetNei(int currNode, int [] coins)
-        {
-            var res = new List<int>();
-
-            foreach (var num in coins)
-            {
-
-                int remainder = currNode - num;
-
-                if (remainder >= 0) res.Add(remainder);
-
-            }
-            return res;
-        }
-
+    
 
 
         //public static void Main(String[] args)

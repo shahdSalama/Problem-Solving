@@ -6,6 +6,7 @@ namespace HackerRank.DataStructure.Graph
 {
     class IslanCountStack
     {
+        // number of connected components on a grid
         public static int NumIslands(string[][] grid)
         {
             int rowcount = grid.Length;
@@ -25,14 +26,19 @@ namespace HackerRank.DataStructure.Graph
         }
         public static bool explore(string[][] grid, int r, int c, HashSet<(int, int)> visited)
         {
-            var stack = new Stack<(int rowS, int ColS)>();
             if (grid[r][c] != "1") return false;
+
             if (visited.Contains((r, c))) return false;
+
+            var stack = new Stack<(int rowS, int ColS)>();
+            
             visited.Add((r, c));
             stack.Push((r, c));
+           
             while (stack.Count != 0)
             {
                 (int currRow, int currCol) = stack.Pop();
+                // GetNeigh returns the valid neighbors, all neighbors returned = 1 and within grid boundaries
                 foreach (var neigh in GetNeigh(grid, currRow, currCol))
                 {
                     if (visited.Contains(neigh))  continue;

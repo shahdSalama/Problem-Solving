@@ -53,12 +53,12 @@ namespace HackerRank.DataStructure.Graph
 
                 foreach (var neighbour in graph[curr])
                 {
-                    if (!visited.Contains(neighbour))
-                    {
-                        if (neighbour == destination) return true;
-                        visited.Add(neighbour);
-                        s.Push(neighbour);
-                    }
+                    if (visited.Contains(neighbour)) continue;
+
+                    if (neighbour == destination) return true;
+                    
+                    visited.Add(neighbour);
+                    s.Push(neighbour);
                 }
             }
             return false;

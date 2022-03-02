@@ -65,12 +65,12 @@ namespace HackerRank.Dynamic_Programming.Tabularization
 
 
 
-        public static void Main(String[] args)
-        {
-            alternate("asdcbsdcagfsdbgdfanfghbsfdab");
+        //public static void Main(String[] args)
+        //{
+        //    alternate("asdcbsdcagfsdbgdfanfghbsfdab");
 
 
 
-        }
+        //}
     }
 }
