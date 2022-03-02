@@ -30,11 +30,11 @@ namespace HackerRank.Algorithms.Dynamic_Programming
 
         // time:m^2*n
         // space: m^2   remember the sufffix
-        public static void Main(string[] args)
-        {
-           var res =  canConstruct("hello",new  string[] { "ko" , "llo" , "ll" , "o", "he"},new Dictionary<string, bool>() );
-           var res2 = canConstruct("hellohello", new string[] { "ko", "llo", "ll", "o", "he" }, new Dictionary<string, bool>());
-           var res3 = canConstruct("rabbit", new string[] { "ko", "llo", "ll", "o", "he" }, new Dictionary<string, bool>());
-        }
+        //public static void Main(string[] args)
+        //{
+        //    var res = canConstruct("hello", new string[] { "ko", "llo", "ll", "o", "he" }, new Dictionary<string, bool>());
+        //    var res2 = canConstruct("hellohello", new string[] { "ko", "llo", "ll", "o", "he" }, new Dictionary<string, bool>());
+        //    var res3 = canConstruct("rabbit", new string[] { "ko", "llo", "ll", "o", "he" }, new Dictionary<string, bool>());
+        //}
     }
 }
