@@ -6,7 +6,8 @@ namespace HackerRank.Dynamic_Programming
 {
     class HowSumSolution
     {
-
+                                                                       // input
+                                                                       // target sum, 
         public static List<int> HowSum(int target, int[] nums, Dictionary<int, List<int>> memo = null)
         {
             if (memo == null) memo = new Dictionary<int, List<int>>();
@@ -28,6 +29,13 @@ namespace HackerRank.Dynamic_Programming
             memo.TryAdd(target, null);
             return null;
         }
+        // M => target sum
+        // N = > arr.Length
+
+        // time : n*m
+        //        keys, values
+        // space: m*m
+
         //public static void Main(String[] args)
         //{
         //    //  var res5 = HowSum(3, new int[] { 2, 0, 5 });

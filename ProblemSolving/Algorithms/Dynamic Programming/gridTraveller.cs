@@ -5,7 +5,9 @@ using System.Text;
 namespace HackerRank.Dynamic_Programming
 {
     class gridTraveller
-    { 
+    {                
+        // start at top left of grid and end at bottom right
+        // number of paths you can take.. you only can move down or right
         public static long gridTraveler(int n, int m, Dictionary<(int, int), long> memo = null)
         {
             if (memo == null) memo = new Dictionary<(int, int), long>();
@@ -23,6 +25,8 @@ namespace HackerRank.Dynamic_Programming
 
             return res;
         }
+        // time :  m*n
+        // space  n + m
 
         //public static void Main(String[] args)
         //{

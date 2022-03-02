@@ -21,8 +21,6 @@ namespace HackerRank.Dynamic_Programming.Tabularization
                 char letter = s[i];
                 int letterNum = letter - 'a';
 
-             
-
                 for (int col = 0; col < NUM_LETTERS; col++)
                 {
                     if (pairs[letterNum, col] == letter)
@@ -65,12 +63,9 @@ namespace HackerRank.Dynamic_Programming.Tabularization
 
 
 
-        //public static void Main(String[] args)
+        //public static void Main(string[] args)
         //{
-        //    alternate("asdcbsdcagfsdbgdfanfghbsfdab");
-
-
-
+        //    alternate("abfab");
         //}
     }
 }

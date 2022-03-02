@@ -7,14 +7,13 @@ namespace HackerRank.Dynamic_Programming
 {
     class bestSum1
     {
-
         public static List<int> bestsum(int targetSum, int[] nums, Dictionary<int, List<int>> memo)
         {
             if (memo.TryGetValue(targetSum, out List<int> val)) 
                 return val;
             if (targetSum == 0) return new List<int>();
             if (targetSum < 0) return null;
-
+            
             List<int> shortestComb = null;
 
             foreach (var num in nums)
@@ -23,7 +22,7 @@ namespace HackerRank.Dynamic_Programming
                 var remainderCombination = bestsum(remainder, nums, memo);
                 if (remainderCombination != null)
                 {
-                    var combination = remainderCombination.ToList();
+                    var combination = remainderCombination.ToList(); // ==> worst case the array contains one, so arr comb.length = m
                     combination.Add(num);
                     if (shortestComb == null || shortestComb.Count > combination.Count)
                     {
@@ -35,6 +34,11 @@ namespace HackerRank.Dynamic_Programming
             memo.Add(targetSum, shortestComb);
             return shortestComb;
         }
+        // m => taregt sum
+        // n => array length
+        // time: O(n*m *m)     
+        // memo keys m * values
+        // space: m*m
         //public static void Main(String[] args)
         //{
         //    //  var res5 = HowSum(3, new int[] { 2, 0, 5 });

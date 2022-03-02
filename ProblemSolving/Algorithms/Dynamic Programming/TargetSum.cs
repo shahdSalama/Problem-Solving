@@ -6,6 +6,7 @@ namespace HackerRank.Dynamic_Programming
 {
     class TargetSumSolution
     {
+        //                                 m            n
         public static bool TargetSum(int target, int[] nums, Dictionary<int, bool> memo = null)
         {                                         // target, res
             if (memo == null) memo = new Dictionary<int, bool>();
@@ -25,7 +26,7 @@ namespace HackerRank.Dynamic_Programming
 
         }
         // time n*m
-        // space : target = n
+        // space : target = m
       
     }
 }

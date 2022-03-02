@@ -25,6 +25,8 @@ namespace HackerRank.Recursion
                 memo.Add(n, fibo(n - 1, memo) + fibo(n - 2, memo));
                 return memo[n];
             }
+            //time: n
+            //space: n
         }
 
 
