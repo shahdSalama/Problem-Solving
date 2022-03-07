@@ -21,7 +21,7 @@ namespace HackerRank.DataStructure
         int GetParent(int i) { return items[getParentIndex(i)]; }
 
 
-       public void swap(int indexOne, int indexTwo)
+        void swap(int indexOne, int indexTwo)
         {
             int temp = items[indexOne];
             items[indexOne] = items[indexTwo];

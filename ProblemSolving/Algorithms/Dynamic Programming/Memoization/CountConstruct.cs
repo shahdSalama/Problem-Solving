@@ -24,10 +24,10 @@ namespace HackerRank.Algorithms.Dynamic_Programming.Memoization
         }
         // time: n*m^2 
         // space:m^2
-        public static void Main(string[] args)
-        {
-            var res2 = CountWays("purple", new string[] { "purp", "p", "ur", "le", "purpl" }, new Dictionary<string, int>());
-            var res3 = CountWays("enterapotentpot", new string[] { "a", "p", "ent", "enter", "ot","o","t" }, new Dictionary<string, int>());
-        }
+        //public static void Main(string[] args)
+        //{
+        //    var res2 = CountWays("purple", new string[] { "purp", "p", "ur", "le", "purpl" }, new Dictionary<string, int>());
+        //    var res3 = CountWays("enterapotentpot", new string[] { "a", "p", "ent", "enter", "ot","o","t" }, new Dictionary<string, int>());
+        //}
     }
 }
