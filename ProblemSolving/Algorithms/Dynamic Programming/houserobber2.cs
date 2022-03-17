@@ -32,10 +32,7 @@ namespace HackerRank.Algorithms.Dynamic_Programming
             memo.Add(n, res);
             return res;
         }
-        public static void Main(string[] args)
-        {
-            Rob(new int[] { 1, 2, 3,  1 });
-        }
+    
 
     }
 }
