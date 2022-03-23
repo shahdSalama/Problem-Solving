@@ -10,53 +10,17 @@ namespace HackerRank.DataStructure.Graph
     {
         public static int maxMin(int k, List<int> arr)
         {
-            int unfairness = int.MaxValue;
-
-            //                i , unfairness, the sub arr
-            var s = new Stack<(int, int, List<int>)>();
-
-            // at visited[i] we know that we have reached here with this unfiarness
-            var visited = new int[arr.Count];
-
-            s.Push((0, 0, new List<int>()));
-            while (s.Count != 0)
+            arr.Sort();
+            k = k - 1;
+            int min = int.MaxValue;
+            for (int i = 0; i < arr.Count - k; i++)
             {
-                (int currI, int currUn, List<int> currSub) = s.Pop();
 
-                // goal
-                if (currSub.Count == k)
-                {
-                    unfairness = Math.Min(unfairness, currUn);
-                    continue;
-                }
-                // out of bounds 
-                if (currI >= arr.Count) continue;
-                // i have been here but with a better unfairness
-                if (visited[currI] != 0 && visited[currI] < currUn) continue;
-
-                visited[currI] = currUn;
-
-                // add the next states to the stack
-
-                // do not use the current number and move
-                s.Push((currI + 1, currUn, currSub));
-                // use the current number and move
-                // calculate unfairness
-                // new sub array
-                var newSub = currSub.ToList();
-                newSub.Add(arr[currI]);
-                s.Push((currI + 1, CalculateUnfaireness(newSub), newSub));
-
+                min = Math.Min(min, arr[i + k] - arr[i]);
             }
-            return unfairness;
+            return min;
 
         }
-        private static int CalculateUnfaireness(List<int> list)
-        {
-            var max = list.Max();
-            var min = list.Min();
-            return max - min;
-
-        }
+      
     }
 }
