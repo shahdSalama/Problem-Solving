@@ -58,10 +58,7 @@ namespace HackerRank.Algorithms.Dynamic_Programming
             }
             return res;
         }
-        public static void Main(string[] args)
-        {
-            Jump(new int[] { 2, 3, 1, 1, 4 });
-        }
+       
     }
 }
 

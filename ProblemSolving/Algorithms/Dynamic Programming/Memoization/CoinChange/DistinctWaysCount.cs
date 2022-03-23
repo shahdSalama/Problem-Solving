@@ -34,9 +34,6 @@ namespace HackerRank.Algorithms.Dynamic_Programming.Memoization.CoinChange
 
             return memo[(target, n)];
         }
-        //public static void Main(string[] args)
-        //{
-        //    var res = getWays(4, new List<long> { 1, 2, 3 });
-        //}
+        
     }
 }
