@@ -8,84 +8,55 @@ namespace HackerRank.DataStructure.Graph
 {
     class minmax
     {
-		public static int maxMin(int k, List<int> arr)
-		{
-            public static int maxMin(int k, List<int> arr)
+        public static int maxMin(int k, List<int> arr)
+        {
+            int unfairness = int.MaxValue;
+
+            //                i , unfairness, the sub arr
+            var s = new Stack<(int, int, List<int>)>();
+
+            // at visited[i] we know that we have reached here with this unfiarness
+            var visited = new int[arr.Count];
+
+            s.Push((0, 0, new List<int>()));
+            while (s.Count != 0)
             {
+                (int currI, int currUn, List<int> currSub) = s.Pop();
 
-                int unfairness = int.MaxValue;
-
-                //                i , unfairness, the sub arr
-                var s = new Stack<(int, int, List<int>)>();
-
-                // at visited[i] we know that we have reached here with this unfiarness
-                var visited = new int[arr.Count];
-
-                s.Push((0, 0, new List<int>()));
-                while (s.Count != 0)
+                // goal
+                if (currSub.Count == k)
                 {
-                    (int currI, int currUn, List<int> currSub) = s.Pop();
-                  
-                    // goal
-                    if (currSub.Count == k)
-                    {
-                        unfairness = Math.Min(unfairness, currUn);
-                        continue;
-                    }
-                    // out of bounds 
-                    if (currI >= arr.Count) continue;
-                    // i have been here but with a better unfairness
-                    if (visited[currI] != 0 && visited[currI] < currUn) continue;
-
-                    visited[currI] = currUn;
-
-                    // add the next states to the stack
-
-                    // do not use the current number and move
-                    s.Push((currI + 1, currUn, currSub));
-                    // use the current number and move
-                    // calculate unfairness
-                    // new sub array
-                    var newSub = currSub.ToList();
-                    newSub.Add(arr[currI]);
-                    s.Push((currI + 1, CalculateUnfaireness(newSub), newSub));
-
+                    unfairness = Math.Min(unfairness, currUn);
+                    continue;
                 }
-                return unfairness;
+                // out of bounds 
+                if (currI >= arr.Count) continue;
+                // i have been here but with a better unfairness
+                if (visited[currI] != 0 && visited[currI] < currUn) continue;
+
+                visited[currI] = currUn;
+
+                // add the next states to the stack
+
+                // do not use the current number and move
+                s.Push((currI + 1, currUn, currSub));
+                // use the current number and move
+                // calculate unfairness
+                // new sub array
+                var newSub = currSub.ToList();
+                newSub.Add(arr[currI]);
+                s.Push((currI + 1, CalculateUnfaireness(newSub), newSub));
 
             }
-            private static int CalculateUnfaireness(List<int> list)
-            {
-                var max = list.Max();
-                var min = list.Min();
-                return max - min;
+            return unfairness;
 
-            }
-            public static void Main(string[] args)
-		{
-			var res = maxMin(4, new List<int> {
-1,
-2,
-3,
-4,
-10,
-20,
-30,
-40,
-100,
-200});
-		}
+        }
+        private static int CalculateUnfaireness(List<int> list)
+        {
+            var max = list.Max();
+            var min = list.Min();
+            return max - min;
 
-		/*4
-1
-2
-3
-4
-10
-20
-30
-40
-100
-200*/
-	}
+        }
+    }
 }
