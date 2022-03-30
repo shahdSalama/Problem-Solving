@@ -41,9 +41,6 @@ namespace HackerRank.MeduimChallenges
         }
 
 
-        //public static void Main(string[] args)
-        //{
-        //    hackerlandRadioTransmitters(new List<int> { 7, 2, 4, 6, 5, 9, 12, 11, }, 2);
-        //}
+       
     }
 }

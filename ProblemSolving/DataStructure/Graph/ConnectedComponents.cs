@@ -37,20 +37,7 @@ namespace HackerRank.DataStructure.Graph
 
 
 
-        //public static void Main(String[] args)
-        //{
-
-        //    var x = connectedComponetsCount(new Dictionary<int, HashSet<int>>()
-        //    {
-        //         {0, new HashSet<int>(){ 8, 1, 5} },
-        //         {1, new HashSet<int>(){ 0} },
-        //         {5, new HashSet<int>(){ 0, 8} },
-        //         {8, new HashSet<int>(){ 0, 5} },
-        //         {2, new HashSet<int>(){ 3, 4} },
-        //         {3, new HashSet<int>(){ 2, 4} },
-        //         {4, new HashSet<int>(){ 3,2} },
-        //    });
-        //}
+       
     }
 }
 
