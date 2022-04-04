@@ -35,7 +35,6 @@ namespace HackerRank.DataStructure.Graph
         {
             var ManagerEmployeeDictionary = new Dictionary<int, List<int>>();
             //                             manager index     ,  employee indexies
-
             for (int i = 0; i < manager.Length; i++)
             {
                 // i is the index of the maneger/emp, // manager[i] is the index of its manager
