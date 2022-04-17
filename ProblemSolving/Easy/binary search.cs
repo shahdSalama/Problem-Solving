@@ -24,11 +24,7 @@ namespace HackerRank.Easy
             return -1;
         }
             //  [-1,0,3,5,9,12], target = 9
-            public static void Main(string[] args)
-        {
-            Search(new int[] { -1, 0, 3, 5, 9, 12 }, 2);
-
-        }
+        
 
     }
 

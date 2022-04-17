@@ -27,14 +27,10 @@ namespace HackerRank.Algorithms.Dynamic_Programming
             memo.Add(target, false);
             return false;
         }
-
+        //"catsandog"
+      //  ["cats","dog","sand","and","cat"]
         // time:m^2*n
-        // space: m^2   remember the sufffix
-        //public static void Main(string[] args)
-        //{
-        //    var res = canConstruct("hello", new string[] { "ko", "llo", "ll", "o", "he" }, new Dictionary<string, bool>());
-        //    var res2 = canConstruct("hellohello", new string[] { "ko", "llo", "ll", "o", "he" }, new Dictionary<string, bool>());
-        //    var res3 = canConstruct("rabbit", new string[] { "ko", "llo", "ll", "o", "he" }, new Dictionary<string, bool>());
-        //}
+        //  .. space: m^2   remember the sufffix
+       
     }
 }

@@ -8,39 +8,38 @@ namespace HackerRank.Algorithms.Dynamic_Programming.Memoization
 {
     class patternmatching
     {
-        public bool IsMatch(string s, string p)
+        public static bool IsMatch(string text, string pattern)
         {
-            return helper(0, 0, s, p, new Dictionary<(int, int), bool>());
-
+            // we are finished with both
+            return helper(0, 0, text, pattern, new Dictionary<(int, int), bool>());
         }
-        private bool helper(int i, int j, string s, string p, Dictionary<(int, int), bool> memo)
+        public static bool helper(int i, int j, string text, string pattern, Dictionary<(int, int), bool> memo)
         {
             if (memo.TryGetValue((i, j), out bool val)) return val;
-            if (i >= s.Length && j >= p.Length)
-            {
-                memo.Add((i, j), true);
-                return true;
-            }
-            // only the pattern is finished 
-            if (j >= p.Length)
-            {
-                memo.Add((i, j), false);
-                return false;
-            }
+            if (i >= text.Length && j >= pattern.Length) return true;
+            // finished with pattern only.. not good
+            if (j >= pattern.Length) return false;
 
-            bool match = i < s.Length && (s[i] == p[j] || p[j] == '.');
-            if (j + 1 < p.Length && p[j + 1] == '*')
-                // use * and mach         ||               do not use
-                return match && helper(i + 1, j, s, p, memo) || helper(i, j + 2, s, p, memo);
-            if (match)
-            {
-                var res = helper(i + 1, j + 1, s, p, memo);
+            bool match = (i < text.Length && (text[i] == pattern[j] || pattern[j] == '.'));
+            // next element is star  
+            if (pattern[j + 1] < pattern.Length && pattern[j + 1] == '*')
+            { // use star and match, or do not use
+                var res = helper(i + 1, j, text, pattern, memo) || helper(i, j + 2, text, pattern, memo);
                 memo.Add((i, j), res);
                 return res;
+
+            }
+            if (match)
+            {
+                var res2 = helper(i + 1, j + 1, text, pattern, memo);
+                memo.Add((i, j), res2);
+                return res2;
             }
             memo.Add((i, j), false);
             return false;
+
         }
-       
+
+
     }
 }
