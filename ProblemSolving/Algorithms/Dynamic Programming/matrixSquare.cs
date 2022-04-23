@@ -68,11 +68,7 @@ namespace HackerRank.Algorithms.Dynamic_Programming
 
 
 
-        public static void Main(string[] args)
-        {
-            MaximalSquare(new char[][] { new char [] {'1','0','1','0','0'},new char [] {'1','0','1','1','1'},new char [] {'1','1','1','1','1'},new char [] {'1','0','0','1','0'}
-           });
-        }
+      
 
     }
     }
