@@ -52,10 +52,6 @@ namespace HackerRank.Algorithms.Dynamic_Programming
                 return res;
 
             }
-        public static void Main(string[] args)
-        {
-            LongestCommonSubsequence("abcde", "ace");
-        }
-
+       
     }
 }

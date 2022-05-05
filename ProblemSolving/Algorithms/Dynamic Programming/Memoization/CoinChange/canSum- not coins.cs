@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HackerRank.Algorithms.Dynamic_Programming.Memoization.CoinChange
 {
-    class canSum
+    class canSum // 1,3   not same as 3,1
     {
         bool coinChange(int[] coins, int target, Dictionary<int, bool> memo)
         {
