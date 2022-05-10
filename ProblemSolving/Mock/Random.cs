@@ -35,6 +35,7 @@ namespace HackerRank.Mock
     }
     public class solution
     {
+        /*
         public static void Main(string[] args)
         {
             var randomPicker = new RandomPicker<int>(new int[] {4, 4, 2, 4, 2, 5, 7, 3});
@@ -44,6 +45,7 @@ namespace HackerRank.Mock
             }
 
         }
+        */
 
     }
 }

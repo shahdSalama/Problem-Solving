@@ -72,6 +72,48 @@ namespace HackerRank.DataStructure.Graph
             return res;
         }
 
-       
+
+        public static int Rob2(int[] nums)
+        {
+
+            if (nums.Length == 1) return nums[0];
+            if (nums.Length == 2) return Math.Max(nums[0], nums[1]);
+            var visited = new int[nums.Length];
+            int res = int.MinValue;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                res = Math.Max(res, explore2(i, nums, visited));
+
+            }
+            return res;
+        }
+        static int explore2(int j, int[] nums, int[] visited)
+        {
+            if (visited[j] > nums[j]) return 0;
+          
+            int res = 0;
+            var s = new Stack<(int, int)>();
+            s.Push((j, nums[j]));
+
+            while (s.Count != 0)
+            {
+                (int currI, int currSum) = s.Pop();
+
+                if (visited[currI] >= currSum) continue;
+                visited[currI] = currSum;
+                res = Math.Max(res, currSum);
+
+                for (int i = currI + 2; i < nums.Length; i++)
+                {
+                    s.Push((i, currSum + nums[i]));
+                }
+
+            }
+            return res;
+
+
+        }
+
+      
     }
 }
