@@ -78,18 +78,15 @@ public class MergeTwoSortedLinkedLists
     public static SinglyLinkedListNode mergeLists2(SinglyLinkedListNode headA, SinglyLinkedListNode headB)
     {
 
-        /* a dummy first node to
-        hang the result on */
+        /* a dummy first node to hang the result on */
         SinglyLinkedListNode dummyNode = new SinglyLinkedListNode(0);
 
-        /* tail points to the
-        last result node */
+        /* tail points to the last result node */
         SinglyLinkedListNode tail = dummyNode;
         while (true)
         {
 
-            /* if either list runs out,
-            use the other list */
+            /* if either list runs out, use the other list */
             if (headA == null)
             {
                 tail.next = headB;
@@ -101,10 +98,7 @@ public class MergeTwoSortedLinkedLists
                 break;
             }
 
-            /* Compare the data of the two
-            lists whichever lists' data is
-            smaller, append it into tail and
-            advance the head to the next Node
+            /* Compare the data of the two lists whichever lists' data is smaller, append it into tail and advance the head to the next Node
             */
             if (headA.data <= headB.data)
             {

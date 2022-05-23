@@ -1,7 +1,5 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace HackerRank.Algorithms.Dynamic_Programming.Memoization.CoinChange
 {
@@ -22,17 +20,19 @@ namespace HackerRank.Algorithms.Dynamic_Programming.Memoization.CoinChange
             if (target < 0 || n < 0) return 0;
 
             // use the coin
-            //                    new target,       nums,
+            //                        new target,       nums,
             long subres1 = coinchange(target - nums[n], nums, n, memo);
             // do not use the coin and use the rest
 
-            //               same target, nums,  n-1
+            //                    same target, nums,  n-1
             long subres2 = coinchange(target, nums, n - 1, memo);
 
-            if (!memo.TryGetValue((target, n), out long _))
-                memo.Add((target, n), subres2 + subres1);
+            var res = subres1 + subres2;
 
-            return memo[(target, n)];
+            if (!memo.TryGetValue((target, n), out long _))
+                memo.Add((target, n), res);
+
+            return res;
         }
         
     }

@@ -37,11 +37,6 @@ namespace HackerRank.MeduimChallenges
             }
             return res;
         }
-        public static void Main(string[] args)
-        {
-            TotalFruit(new int[] { 0, 1, 2, 2 });
-
-
-        }
+       
     }
 }
