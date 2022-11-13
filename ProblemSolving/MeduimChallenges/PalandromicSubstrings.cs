@@ -36,10 +36,7 @@ namespace HackerRank.MeduimChallenges
                 }
                 return count;
             }
-            public static void Main(string[] args)
-            {
-            CountSubstrings("kdmwok");
-            }
+          
         }
     }
 

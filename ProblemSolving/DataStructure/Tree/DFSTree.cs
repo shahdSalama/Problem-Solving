@@ -70,8 +70,8 @@ namespace HackerRank.DataStructure.Tree
         public static List<TreeNode> DFSPreOrder(TreeNode root)
         {
             if (root == null) return new List<TreeNode>();
-            var leftNodes = DFSPostOrder(root.left);
-            var rightNodes = DFSPostOrder(root.right);
+            var leftNodes = DFSPreOrder(root.left);
+            var rightNodes = DFSPreOrder(root.right);
             var list = new List<TreeNode> { root };
             list.AddRange(leftNodes);
             list.AddRange(rightNodes);
